@@ -1,0 +1,22 @@
+import { XCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Container } from "../components/common/Container";
+
+export function CheckoutCancelPage() {
+  return (
+    <section className="bg-cream py-20">
+      <Container className="text-center">
+        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-orange-100 text-orange-700">
+          <XCircle size={44} aria-hidden="true" />
+        </div>
+        <h1 className="mt-6 text-4xl font-black text-slate-950">Checkout Cancelled</h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600">
+          No payment was processed. You can go back to a rental and start checkout again.
+        </p>
+        <Link className="mt-8 inline-flex font-black text-epicPurple" to="/rentals">
+          Back to rentals
+        </Link>
+      </Container>
+    </section>
+  );
+}
