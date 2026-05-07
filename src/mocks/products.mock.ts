@@ -1,32 +1,15 @@
 import type { Product } from "../types/product";
 
-function placeholderImage(title: string, from: string, via: string, to: string) {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
-      <defs>
-        <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="${from}"/>
-          <stop offset="52%" stop-color="${via}"/>
-          <stop offset="100%" stop-color="${to}"/>
-        </linearGradient>
-        <pattern id="marks" width="64" height="64" patternUnits="userSpaceOnUse">
-          <rect x="7" y="9" width="18" height="10" rx="3" fill="rgba(255,255,255,0.26)"/>
-          <rect x="42" y="39" width="14" height="9" rx="3" fill="rgba(255,255,255,0.18)"/>
-        </pattern>
-      </defs>
-      <rect width="1200" height="850" rx="52" fill="url(#bg)"/>
-      <rect width="1200" height="850" fill="url(#marks)"/>
-      <path d="M116 614 C238 438 351 394 480 534 C596 660 717 638 830 514 C936 398 1051 396 1120 532 L1120 735 L116 735 Z" fill="rgba(255,255,255,0.28)"/>
-      <rect x="224" y="282" width="752" height="332" rx="64" fill="rgba(255,255,255,0.82)"/>
-      <path d="M278 282 L600 116 L922 282 Z" fill="rgba(255,255,255,0.74)"/>
-      <rect x="296" y="378" width="164" height="236" rx="34" fill="rgba(124,58,237,0.25)"/>
-      <rect x="518" y="365" width="164" height="249" rx="34" fill="rgba(249,115,22,0.24)"/>
-      <rect x="740" y="378" width="164" height="236" rx="34" fill="rgba(14,165,233,0.22)"/>
-      <text x="600" y="706" fill="#221729" font-family="Arial, sans-serif" font-size="54" font-weight="800" text-anchor="middle">${title}</text>
-    </svg>`;
-
-  return `data:image/svg+xml,${encodeURIComponent(svg)}`;
-}
+const stockImages = {
+  bounceHouse:
+    "https://images.unsplash.com/photo-1765947389633-461a4af7712b?auto=format&fit=crop&w=1200&q=80",
+  bouncyCastle:
+    "https://images.unsplash.com/photo-1633846850057-f8e8217b7c48?auto=format&fit=crop&w=1200&q=80",
+  waterSlide:
+    "https://images.unsplash.com/photo-1725961502885-f0c5cb8c9f06?auto=format&fit=crop&w=1200&q=80",
+  amusementSlide:
+    "https://images.unsplash.com/photo-1753274864759-a15a45ecb424?auto=format&fit=crop&w=1200&q=80",
+};
 
 function bullImage() {
   const svg = `
@@ -65,10 +48,7 @@ export const productsMock: Product[] = [
     priceCents: 18900,
     depositCents: 5000,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Rainbow Castle", "#7c3aed", "#ec4899", "#f97316"),
-      placeholderImage("Jump Zone", "#0ea5e9", "#22c55e", "#f97316"),
-    ],
+    images: [stockImages.bounceHouse, stockImages.bouncyCastle],
     features: ["Classic castle layout", "Bright party colors", "Mesh safety sides", "Full-day rental"],
     specs: {
       size: "15 ft x 15 ft",
@@ -90,10 +70,7 @@ export const productsMock: Product[] = [
     priceCents: 25900,
     depositCents: 7500,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Tropical Splash", "#22c55e", "#0ea5e9", "#f97316"),
-      placeholderImage("Wet/Dry Combo", "#14b8a6", "#22c55e", "#7c3aed"),
-    ],
+    images: [stockImages.waterSlide, stockImages.amusementSlide],
     features: ["Bounce area", "Climbing lane", "Wet or dry slide", "Splash landing"],
     specs: {
       size: "28 ft x 15 ft",
@@ -115,10 +92,7 @@ export const productsMock: Product[] = [
     priceCents: 19900,
     depositCents: 5000,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Princess Palace", "#ec4899", "#a855f7", "#f9a8d4"),
-      placeholderImage("Palace Bounce", "#f472b6", "#7c3aed", "#0ea5e9"),
-    ],
+    images: [stockImages.bouncyCastle, stockImages.bounceHouse],
     features: ["Palace theme", "Large jumping space", "Safety entrance ramp", "Great for birthdays"],
     specs: {
       size: "16 ft x 15 ft",
@@ -140,10 +114,7 @@ export const productsMock: Product[] = [
     priceCents: 28900,
     depositCents: 8500,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Super Slide", "#f97316", "#ef4444", "#7c3aed"),
-      placeholderImage("Adventure Slide", "#0ea5e9", "#f97316", "#22c55e"),
-    ],
+    images: [stockImages.amusementSlide, stockImages.waterSlide],
     features: ["Tall slide", "Easy climb lane", "Wide landing", "High throughput for events"],
     specs: {
       size: "30 ft x 13 ft",
@@ -165,10 +136,7 @@ export const productsMock: Product[] = [
     priceCents: 20900,
     depositCents: 5000,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Pirate Cove", "#0ea5e9", "#3b82f6", "#f97316"),
-      placeholderImage("Treasure Jump", "#1d4ed8", "#f59e0b", "#22c55e"),
-    ],
+    images: [stockImages.bounceHouse, stockImages.amusementSlide],
     features: ["Pirate theme", "Open jump floor", "Shaded entry", "Photo-friendly design"],
     specs: {
       size: "15 ft x 15 ft",
@@ -190,10 +158,7 @@ export const productsMock: Product[] = [
     priceCents: 18900,
     depositCents: 5000,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Jungle Jumper", "#22c55e", "#84cc16", "#0ea5e9"),
-      placeholderImage("Wild Bounce", "#16a34a", "#facc15", "#7c3aed"),
-    ],
+    images: [stockImages.bouncyCastle, stockImages.waterSlide],
     features: ["Jungle colorway", "Compact footprint", "Mesh visibility", "Fast setup"],
     specs: {
       size: "14 ft x 14 ft",
@@ -215,10 +180,7 @@ export const productsMock: Product[] = [
     priceCents: 24900,
     depositCents: 7500,
     rentalType: "fixed_slot",
-    images: [
-      placeholderImage("Sports Arena", "#0ea5e9", "#22c55e", "#ef4444"),
-      placeholderImage("Game Day Combo", "#2563eb", "#16a34a", "#f97316"),
-    ],
+    images: [stockImages.amusementSlide, stockImages.bounceHouse],
     features: ["Sports theme", "Bounce and activity zones", "Great for teams", "Morning or afternoon slots"],
     specs: {
       size: "24 ft x 16 ft",
@@ -240,10 +202,7 @@ export const productsMock: Product[] = [
     priceCents: 30900,
     depositCents: 8500,
     rentalType: "full_day",
-    images: [
-      placeholderImage("Ocean Wave", "#0ea5e9", "#06b6d4", "#22c55e"),
-      placeholderImage("Splash Slide", "#38bdf8", "#7c3aed", "#f97316"),
-    ],
+    images: [stockImages.waterSlide, stockImages.bouncyCastle],
     features: ["Wet or dry use", "Large slide", "Splash landing", "Summer favorite"],
     specs: {
       size: "32 ft x 14 ft",

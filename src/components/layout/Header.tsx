@@ -22,7 +22,7 @@ export function Header() {
     clsx(
       "rounded-full px-4 py-2 text-sm font-bold transition",
       terminatorMode
-        ? "text-stone-200 hover:bg-white/10 hover:text-white"
+        ? "text-stone-800 hover:bg-red-50 hover:text-terminatorRed"
         : "text-slate-700 hover:bg-purple-100 hover:text-epicPurple",
       isActive && (terminatorMode ? "bg-terminatorRed text-white" : "bg-epicPurple text-white"),
     );
@@ -31,7 +31,7 @@ export function Header() {
     <header
       className={clsx(
         "sticky top-0 z-50 border-b backdrop-blur-xl",
-        terminatorMode ? "border-white/10 bg-stone-950/92" : "border-purple-100 bg-white/88",
+        terminatorMode ? "border-red-100 bg-stone-50/92" : "border-purple-100 bg-white/88",
       )}
     >
       <Container className="flex min-h-20 items-center justify-between gap-4">
@@ -45,10 +45,10 @@ export function Header() {
             <Sparkles aria-hidden="true" />
           </span>
           <span>
-            <span className={clsx("block text-xl font-black", terminatorMode ? "text-white" : "text-slate-950")}>
+            <span className={clsx("block text-xl font-black", terminatorMode ? "text-stone-950" : "text-slate-950")}>
               Epic Bouncers
             </span>
-            <span className={clsx("block text-xs font-bold", terminatorMode ? "text-red-200" : "text-epicPink")}>
+            <span className={clsx("block text-xs font-bold", terminatorMode ? "text-terminatorRed" : "text-epicPink")}>
               Party rentals made easy
             </span>
           </span>
@@ -75,7 +75,7 @@ export function Header() {
           type="button"
           className={clsx(
             "inline-flex h-11 w-11 items-center justify-center rounded-full lg:hidden",
-            terminatorMode ? "bg-white/10 text-white" : "bg-purple-100 text-epicPurple",
+            terminatorMode ? "bg-red-50 text-terminatorRed" : "bg-purple-100 text-epicPurple",
           )}
           aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={menuOpen}
@@ -86,7 +86,7 @@ export function Header() {
       </Container>
 
       {menuOpen ? (
-        <div className={clsx("border-t lg:hidden", terminatorMode ? "border-white/10" : "border-purple-100")}>
+        <div className={clsx("border-t lg:hidden", terminatorMode ? "border-red-100" : "border-purple-100")}>
           <Container className="grid gap-2 py-4">
             {navItems.map((item) => (
               <NavLink key={item.to} to={item.to} className={linkClass} onClick={() => setMenuOpen(false)}>

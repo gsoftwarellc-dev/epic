@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="group overflow-hidden rounded-3xl border border-purple-100 bg-white shadow-bounce transition hover:-translate-y-1 hover:shadow-warm">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-purple-100 bg-white shadow-bounce transition hover:-translate-y-1 hover:shadow-warm">
       <div className="aspect-[4/3] overflow-hidden bg-purple-100">
         <img
           src={product.images[0]}
@@ -17,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
       </div>
-      <div className="grid gap-4 p-5">
+      <div className="flex flex-1 flex-col gap-4 p-5">
         <div>
           <h3 className="text-xl font-black text-slate-950">{product.name}</h3>
           <p className="mt-2 min-h-14 text-sm leading-6 text-slate-600">{product.shortDescription}</p>
@@ -40,9 +40,11 @@ export function ProductCard({ product }: ProductCardProps) {
             <ShieldCheck size={14} aria-hidden="true" /> Setup included
           </span>
         </div>
-        <Button to={`/rentals/${product.slug}`} variant="primary" fullWidth>
-          View Details
-        </Button>
+        <div className="mt-auto pt-2">
+          <Button to={`/rentals/${product.slug}`} variant="primary" fullWidth>
+            View Details
+          </Button>
+        </div>
       </div>
     </article>
   );

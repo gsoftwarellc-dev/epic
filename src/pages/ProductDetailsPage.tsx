@@ -91,6 +91,22 @@ export function ProductDetailsPage() {
               </div>
             </div>
 
+            <AvailabilityChecker
+              productId={product.id}
+              tone={tone}
+              onAvailable={setAvailableDate}
+              onUnavailable={() => setAvailableDate(null)}
+            />
+
+            {availableForThisProduct ? (
+              <BookingForm
+                key={`${product.id}-${availableForThisProduct.date}`}
+                product={product}
+                availability={availableForThisProduct}
+                tone={tone}
+              />
+            ) : null}
+
             <RentalFeatureList features={product.features} tone={tone} />
 
             <div className={isTerminator ? "rounded-[2rem] bg-stone-900 p-6" : "rounded-[2rem] bg-white p-6 shadow-bounce"}>
@@ -107,23 +123,6 @@ export function ProductDetailsPage() {
               </dl>
             </div>
           </div>
-        </div>
-
-        <div className="mt-10 grid gap-6 lg:grid-cols-2">
-          <AvailabilityChecker
-            productId={product.id}
-            tone={tone}
-            onAvailable={setAvailableDate}
-            onUnavailable={() => setAvailableDate(null)}
-          />
-          {availableForThisProduct ? (
-            <BookingForm
-              key={`${product.id}-${availableForThisProduct.date}`}
-              product={product}
-              availability={availableForThisProduct}
-              tone={tone}
-            />
-          ) : null}
         </div>
       </Container>
     </section>
