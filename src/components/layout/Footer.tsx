@@ -10,8 +10,20 @@ export function Footer() {
     <footer className={terminatorMode ? "bg-stone-950 text-stone-200" : "bg-slate-950 text-white"}>
       <Container className="grid gap-10 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <Link to="/" className="text-2xl font-black">
-            Epic Bouncers
+          <Link to="/" className="inline-block rounded-2xl bg-white p-3">
+            {terminatorMode ? (
+              <img
+                src="/images/terminator-logo.jpg"
+                alt="The Terminator Mechanical Bull Rental"
+                className="h-16 w-auto object-contain"
+              />
+            ) : (
+              <img
+                src="/images/epic-bouncers-logo.jpg"
+                alt="Epic Bouncers Bounce House Rentals"
+                className="h-16 w-auto object-contain"
+              />
+            )}
           </Link>
           <p className="mt-4 max-w-md text-sm leading-7 text-slate-300">
             Bounce house rentals, wet/dry slides, combo units, and The Terminator Mechanical Bull for events that need

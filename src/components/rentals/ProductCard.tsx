@@ -1,4 +1,4 @@
-import { Droplets, ShieldCheck } from "lucide-react";
+import { Droplets, ImageOff, ShieldCheck } from "lucide-react";
 import { Button } from "../common/Button";
 import type { Product } from "../../types/product";
 import { formatCurrency } from "../../utils/formatCurrency";
@@ -8,14 +8,22 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const hasImage = product.images.length > 0;
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-purple-100 bg-white shadow-bounce transition hover:-translate-y-1 hover:shadow-warm">
       <div className="aspect-[4/3] overflow-hidden bg-purple-100">
-        <img
-          src={product.images[0]}
-          alt={`${product.name} rental preview`}
-          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
-        />
+        {hasImage ? (
+          <img
+            src={product.images[0]}
+            alt={`${product.name} rental preview`}
+            className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-slate-400">
+            <ImageOff size={36} />
+            <span className="text-xs font-semibold">Photo coming soon</span>
+          </div>
+        )}
       </div>
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div>

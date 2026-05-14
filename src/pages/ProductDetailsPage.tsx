@@ -60,25 +60,29 @@ export function ProductDetailsPage() {
           Back to {isTerminator ? "Mechanical Bull" : "Rentals"}
         </Link>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+        {/* Title above two-column layout */}
+        <div className="mt-8 mb-6">
+          <p className={isTerminator ? "text-sm font-black uppercase text-red-300" : "text-sm font-black uppercase text-epicPink"}>
+            {isTerminator ? "Mechanical bull rental" : "Epic Bouncers rental"}
+          </p>
+          <h1 className={isTerminator ? "mt-2 text-4xl font-black text-white sm:text-5xl" : "mt-2 text-4xl font-black text-slate-950 sm:text-5xl"}>
+            {product.name}
+          </h1>
+        </div>
+
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr]">
           <ProductGallery images={product.images} name={product.name} tone={tone} />
 
           <div className="grid gap-6">
-            <div>
-              <p className={isTerminator ? "text-sm font-black uppercase text-red-300" : "text-sm font-black uppercase text-epicPink"}>
-                {isTerminator ? "Mechanical bull rental" : "Epic Bouncers rental"}
-              </p>
-              <h1 className={isTerminator ? "mt-3 text-4xl font-black text-white sm:text-5xl" : "mt-3 text-4xl font-black text-slate-950 sm:text-5xl"}>
-                {product.name}
-              </h1>
-              <p className={isTerminator ? "mt-5 text-lg leading-8 text-stone-300" : "mt-5 text-lg leading-8 text-slate-600"}>
-                {product.description}
-              </p>
-            </div>
+            <p className={isTerminator ? "text-lg leading-8 text-stone-300" : "text-lg leading-8 text-slate-600"}>
+              {product.description}
+            </p>
 
             <div className="grid gap-4 sm:grid-cols-2">
               <div className={isTerminator ? "rounded-3xl bg-stone-900 p-5" : "rounded-3xl bg-white p-5 shadow-bounce"}>
-                <p className="font-bold text-slate-500">Rental price</p>
+                <p className="font-bold text-slate-500">
+                  Rental price{isTerminator ? " / 4 hrs" : ""}
+                </p>
                 <p className={isTerminator ? "mt-1 text-3xl font-black text-red-200" : "mt-1 text-3xl font-black text-epicPurple"}>
                   {formatCurrency(product.priceCents)}
                 </p>

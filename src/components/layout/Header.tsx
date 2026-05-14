@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Button } from "../common/Button";
@@ -30,28 +30,25 @@ export function Header() {
   return (
     <header
       className={clsx(
-        "sticky top-0 z-50 border-b backdrop-blur-xl",
-        terminatorMode ? "border-red-100 bg-stone-50/92" : "border-purple-100 bg-white/88",
+        "sticky top-0 z-50 border-b",
+        terminatorMode ? "border-red-100 bg-stone-50" : "border-purple-100 bg-white",
       )}
     >
       <Container className="flex min-h-20 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-          <span
-            className={clsx(
-              "flex h-12 w-12 items-center justify-center rounded-2xl",
-              terminatorMode ? "bg-terminatorRed text-white" : "bg-epicPurple text-white",
-            )}
-          >
-            <Sparkles aria-hidden="true" />
-          </span>
-          <span>
-            <span className={clsx("block text-xl font-black", terminatorMode ? "text-stone-950" : "text-slate-950")}>
-              Epic Bouncers
-            </span>
-            <span className={clsx("block text-xs font-bold", terminatorMode ? "text-terminatorRed" : "text-epicPink")}>
-              Party rentals made easy
-            </span>
-          </span>
+        <Link to="/" onClick={() => setMenuOpen(false)}>
+          {terminatorMode ? (
+            <img
+              src="/images/terminator-logo.jpg"
+              alt="The Terminator Mechanical Bull Rental"
+              className="h-16 w-auto object-contain"
+            />
+          ) : (
+            <img
+              src="/images/epic-bouncers-logo.jpg"
+              alt="Epic Bouncers Bounce House Rentals"
+              className="h-16 w-auto object-contain"
+            />
+          )}
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
