@@ -8,7 +8,7 @@ const heroBackground =
 
 export function HeroSection() {
   return (
-    <section className="relative isolate flex min-h-[calc(100svh-5rem)] overflow-hidden bg-slate-950">
+    <section className="relative isolate flex min-h-[calc(100svh-9rem)] overflow-hidden bg-slate-950 sm:min-h-[calc(100svh-9.5rem)]">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: heroBackground }}
@@ -23,7 +23,7 @@ export function HeroSection() {
         }}
         aria-hidden="true"
       />
-      <Container className="relative flex min-h-[calc(100svh-5rem)] items-center py-12 sm:py-16 lg:py-20">
+      <Container className="relative flex min-h-[calc(100svh-9rem)] items-center py-12 sm:min-h-[calc(100svh-9.5rem)] sm:py-16 lg:py-20">
         <div className="max-w-3xl text-white">
           <span className="inline-flex rounded-full bg-white/18 px-4 py-2 text-sm font-black uppercase">
             Epic Bouncers rentals

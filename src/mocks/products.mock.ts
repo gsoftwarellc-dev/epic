@@ -161,7 +161,7 @@ export const productsMock: Product[] = [
     priceCents: 27500,
     depositCents: 8500,
     rentalType: "full_day",
-    images: [],
+    images: [img("epic-bouncers-3.jpg")],
     features: ["Human-sized game", "Up to 10 players at once", "Cushioned hammer included", "Great for all ages", "Colorful ball set"],
     specs: {
       size: "21'W x 14'L x 7'H",
@@ -182,7 +182,7 @@ export const productsMock: Product[] = [
     priceCents: 70000,
     depositCents: 20000,
     rentalType: "hourly",
-    images: [],
+    images: [img("terminator-mechanical-bull.jpg")],
     features: ["Experienced operator included", "American-made bull", "Inflatable safety arena", "Western theme", "Great for all events"],
     specs: {
       size: "15'L x 15'W",

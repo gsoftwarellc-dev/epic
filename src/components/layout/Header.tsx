@@ -34,19 +34,19 @@ export function Header() {
         terminatorMode ? "border-red-100 bg-stone-50" : "border-purple-100 bg-white",
       )}
     >
-      <Container className="flex min-h-20 items-center justify-between gap-4">
-        <Link to="/" onClick={() => setMenuOpen(false)}>
+      <Container className="flex min-h-[7.2rem] items-center justify-between gap-4 sm:min-h-[7.6rem]">
+        <Link to="/" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center">
           {terminatorMode ? (
             <img
               src="/images/terminator-logo.jpg"
               alt="The Terminator Mechanical Bull Rental"
-              className="h-16 w-auto object-contain"
+              className="h-[5.6rem] w-auto object-contain sm:h-[6.4rem]"
             />
           ) : (
             <img
               src="/images/epic-bouncers-logo.jpg"
               alt="Epic Bouncers Bounce House Rentals"
-              className="h-16 w-auto object-contain"
+              className="h-[5.6rem] w-auto object-contain sm:h-[6.4rem]"
             />
           )}
         </Link>
