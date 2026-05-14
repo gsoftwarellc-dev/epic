@@ -35,12 +35,12 @@ export function Header() {
       )}
     >
       <Container className="flex min-h-[7.2rem] items-center justify-between gap-4 sm:min-h-[7.6rem]">
-        <Link to="/" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center">
+        <Link to="/" onClick={() => setMenuOpen(false)} className="flex shrink-0 items-center mt-4">
           {terminatorMode ? (
             <img
               src="/images/terminator-logo.jpg"
               alt="The Terminator Mechanical Bull Rental"
-              className="h-[5.6rem] w-auto object-contain sm:h-[6.4rem]"
+              className="h-[5.6rem] w-auto object-contain sm:h-[6.4rem] mix-blend-multiply"
             />
           ) : (
             <img

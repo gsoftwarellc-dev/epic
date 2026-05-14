@@ -15,13 +15,13 @@ export function Footer() {
               <img
                 src="/images/terminator-logo.jpg"
                 alt="The Terminator Mechanical Bull Rental"
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             ) : (
               <img
                 src="/images/epic-bouncers-logo.jpg"
                 alt="Epic Bouncers Bounce House Rentals"
-                className="h-16 w-auto object-contain"
+                className="h-24 w-auto object-contain"
               />
             )}
           </Link>
