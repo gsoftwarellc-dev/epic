@@ -68,7 +68,7 @@ export function Footer() {
         </div>
       </Container>
       <div className="border-t border-white/10">
-        <Container className="py-5 text-sm text-slate-400">
+        <Container className="py-5 text-sm text-slate-400 text-center">
           <p>Copyright {new Date().getFullYear()} Epic Bouncers. All rights reserved.</p>
         </Container>
       </div>
