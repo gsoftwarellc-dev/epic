@@ -4,25 +4,25 @@ import { SectionHeading } from "../common/SectionHeading";
 
 const reasons = [
   {
-    title: "Licensed & insured",
+    title: "Licensed & Insured",
     description: "Professional rental practices with safety-minded event setup.",
     icon: ShieldCheck,
     color: "bg-purple-100 text-epicPurple",
   },
   {
-    title: "8 options to choose from",
+    title: "8 Options to Choose From",
     description: "Castles, combos, slides, and wet/dry units for different ages and spaces.",
     icon: Sparkles,
     color: "bg-pink-100 text-epicPink",
   },
   {
-    title: "Wet / dry options",
+    title: "Wet / Dry Options",
     description: "Summer splash parties or dry setups when water is not part of the plan.",
     icon: Droplets,
     color: "bg-blue-100 text-epicBlue",
   },
   {
-    title: "Setup and take-down included",
+    title: "Setup and Take-Down Included",
     description: "The rental arrives event-ready and leaves without adding work to your day.",
     icon: BadgeCheck,
     color: "bg-green-100 text-epicGreen",
@@ -34,8 +34,8 @@ export function WhyChooseUsSection() {
     <section className="bg-cream py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Why families book"
-          title="Easy planning, safe setup, bigger smiles"
+          eyebrow="Why Families Book"
+          title="Easy Planning, Safe Setup, Bigger Smiles"
           description="From first click to setup day, rental planning stays simple, colorful, and event-ready."
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">

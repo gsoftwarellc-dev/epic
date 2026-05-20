@@ -1,4 +1,5 @@
 import { Droplets, ImageOff, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "../common/Button";
 import type { Product } from "../../types/product";
 import { formatCurrency } from "../../utils/formatCurrency";
@@ -10,7 +11,7 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const hasImage = product.images.length > 0;
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-purple-100 bg-white shadow-bounce transition hover:-translate-y-1 hover:shadow-warm">
+    <Link to={`/rentals/${product.slug}`} className="group flex h-full flex-col overflow-hidden rounded-3xl border border-purple-100 bg-white shadow-bounce transition hover:-translate-y-1 hover:shadow-warm">
       <div className="aspect-[4/3] overflow-hidden bg-purple-100">
         {hasImage ? (
           <img
@@ -31,13 +32,8 @@ export function ProductCard({ product }: ProductCardProps) {
           <p className="mt-2 min-h-14 text-sm leading-6 text-slate-600">{product.shortDescription}</p>
         </div>
         <div className="grid grid-cols-2 gap-3 text-sm">
-          <div className="rounded-2xl bg-purple-50 p-3">
-            <span className="block font-bold text-slate-500">Price</span>
-            <span className="text-lg font-black text-epicPurple">{formatCurrency(product.priceCents)}</span>
-          </div>
-          <div className="rounded-2xl bg-orange-50 p-3">
-            <span className="block font-bold text-slate-500">Deposit</span>
-            <span className="text-lg font-black text-epicOrange">{formatCurrency(product.depositCents)}</span>
+          <div className="col-span-2 rounded-2xl bg-purple-50 p-3">
+            <span className="text-lg font-black text-epicPurple">Rent for Only {formatCurrency(product.priceCents)}</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-2 text-xs font-black uppercase text-slate-600">
@@ -54,6 +50,6 @@ export function ProductCard({ product }: ProductCardProps) {
           </Button>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

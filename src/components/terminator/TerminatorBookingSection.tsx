@@ -23,7 +23,7 @@ export function TerminatorBookingSection({ product }: TerminatorBookingSectionPr
           <div className="grid gap-6">
             <ProductGallery images={product.images} name={product.name} tone="terminator" />
             <div className="rounded-[2rem] border border-red-900 bg-stone-900 p-6 shadow-terminator">
-              <h2 className="text-2xl font-black">Built for big-event energy</h2>
+              <h2 className="text-2xl font-black">Built for Big-Event Energy</h2>
               <div className="mt-5 grid grid-cols-2 gap-3">
                 {eventTypes.map((eventType) => (
                   <span key={eventType} className="rounded-2xl bg-red-950/70 px-4 py-3 text-center font-black">

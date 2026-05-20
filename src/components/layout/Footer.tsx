@@ -13,15 +13,15 @@ export function Footer() {
           <Link to="/" className="inline-block rounded-2xl bg-white p-3">
             {terminatorMode ? (
               <img
-                src="/images/terminator-logo.jpg"
+                src="/images/terminator_logo-removebg-preview.png"
                 alt="The Terminator Mechanical Bull Rental"
-                className="h-24 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             ) : (
               <img
-                src="/images/epic-bouncers-logo.jpg"
+                src="/images/epic-bouncers-logo-full.jpg"
                 alt="Epic Bouncers Bounce House Rentals"
-                className="h-24 w-auto object-contain"
+                className="h-28 w-auto object-contain"
               />
             )}
           </Link>
@@ -53,13 +53,13 @@ export function Footer() {
           <h2 className="text-base font-black">Contact</h2>
           <div className="mt-4 grid gap-3 text-sm text-slate-300">
             <span className="flex items-center gap-3">
-              <Phone size={18} aria-hidden="true" /> (801) 555-0138
+              <Phone size={18} aria-hidden="true" /> 801.941.0482
             </span>
             <span className="flex items-center gap-3">
-              <Mail size={18} aria-hidden="true" /> hello@epicbouncers.com
+              <Mail size={18} aria-hidden="true" /> info@epicbouncersutah.com
             </span>
             <span className="flex items-center gap-3">
-              <MapPin size={18} aria-hidden="true" /> Utah service area
+              <MapPin size={18} aria-hidden="true" /> Davis, Weber, Box Elder counties
             </span>
             <span className="flex items-center gap-3">
               <CalendarCheck size={18} aria-hidden="true" /> Setup and take-down included

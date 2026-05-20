@@ -4,10 +4,10 @@ import { Button } from "../components/common/Button";
 import { SectionHeading } from "../components/common/SectionHeading";
 
 const contactCards = [
-  { title: "Phone", value: "(801) 555-0138", icon: Phone },
-  { title: "Email", value: "hello@epicbouncers.com", icon: Mail },
-  { title: "Website", value: "EpicBouncers.com", icon: Globe },
-  { title: "Service area", value: "Utah and nearby event areas", icon: MapPin },
+  { title: "Phone", value: "801.941.0482", icon: Phone },
+  { title: "Email", value: "info@epicbouncersutah.com", icon: Mail },
+  { title: "Website", value: "EpicBouncersUtah.com", icon: Globe },
+  { title: "Service area", value: "Davis, Weber, Box Elder counties (Other locations available with travel fee)", icon: MapPin },
 ];
 
 export function ContactPage() {
@@ -16,7 +16,7 @@ export function ContactPage() {
       <Container>
         <SectionHeading
           eyebrow="Contact"
-          title="Tell us about your event"
+          title="Tell Us About Your Event"
           description="Share the date, rental ideas, and event location so the right setup can be planned."
         />
 

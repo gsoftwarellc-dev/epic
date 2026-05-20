@@ -4,7 +4,7 @@ import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 
-const captions = ["Backyard birthday setup", "Wet slide party day", "School event favorite", "Family reunion fun"];
+const captions = ["Backyard Birthday Setup", "Wet Slide Party Day", "School Event Favorite", "Family Reunion Fun"];
 
 export function GalleryPreviewSection() {
   const { data: products = [] } = useQuery({
@@ -20,7 +20,7 @@ export function GalleryPreviewSection() {
             <SectionHeading
               align="left"
               eyebrow="Gallery"
-              title="Colorful rentals that look great on party day"
+              title="Colorful Rentals That Look Great on Party Day"
               description="Preview the kind of setups Epic Bouncers can bring to birthdays, parks, school events, and family gatherings."
             />
             <div className="mt-7">

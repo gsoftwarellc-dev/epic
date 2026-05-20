@@ -4,14 +4,14 @@ import { Container } from "../components/common/Container";
 import { SectionHeading } from "../components/common/SectionHeading";
 
 const captions = [
-  "Birthday bounce house centerpiece",
-  "Wet slide summer setup",
-  "Backyard combo rental",
-  "Colorful jumper ready to go",
-  "School event activity zone",
-  "Neighborhood party favorite",
-  "Sports-themed party rental",
-  "Water slide day with friends",
+  "Birthday Bounce House Centerpiece",
+  "Wet Slide Summer Setup",
+  "Backyard Combo Rental",
+  "Colorful Jumper Ready to Go",
+  "School Event Activity Zone",
+  "Neighborhood Party Favorite",
+  "Sports-Themed Party Rental",
+  "Water Slide Day with Friends",
 ];
 
 export function GalleryPage() {
@@ -27,7 +27,7 @@ export function GalleryPage() {
       <Container>
         <SectionHeading
           eyebrow="Gallery"
-          title="Party-ready rental inspiration"
+          title="Party-Ready Rental Inspiration"
           description="Browse colorful setup previews for birthdays, school events, family parties, and summer splash days."
         />
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

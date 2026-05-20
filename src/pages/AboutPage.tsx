@@ -4,17 +4,17 @@ import { SectionHeading } from "../components/common/SectionHeading";
 
 const values = [
   {
-    title: "Safe setup",
+    title: "Safe Setup",
     description: "Rentals are placed with attention to space, anchoring needs, and event flow.",
     icon: ShieldCheck,
   },
   {
-    title: "Fun rentals",
+    title: "Fun Rentals",
     description: "Bright bounce houses, wet/dry slides, combos, and a mechanical bull for bigger events.",
     icon: PartyPopper,
   },
   {
-    title: "Reliable service",
+    title: "Reliable Service",
     description: "Clear rental details, simple booking steps, and setup/take-down included.",
     icon: HeartHandshake,
   },
@@ -28,7 +28,7 @@ export function AboutPage() {
           <SectionHeading
             align="left"
             eyebrow="About Epic Bouncers"
-            title="Family-friendly event rentals with dependable setup"
+            title="Family-Friendly Event Rentals with Dependable Setup"
             description="Epic Bouncers helps families, schools, churches, and event hosts create playful celebrations without turning rental planning into extra work."
           />
           <div className="rounded-[2rem] bg-white p-6 text-lg leading-8 text-slate-600 shadow-bounce sm:p-8">

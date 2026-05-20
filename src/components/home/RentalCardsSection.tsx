@@ -14,8 +14,8 @@ export function RentalCardsSection() {
     <section className="bg-white py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Bounce house rentals"
-          title="Pick the party centerpiece"
+          eyebrow="Bounce House Rentals"
+          title="Pick the Party Centerpiece"
           description="Eight colorful rentals with clean setup, clear pricing, and availability checks before booking."
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -26,7 +26,7 @@ export function HeroSection() {
       <Container className="relative flex min-h-[calc(100svh-9rem)] items-center py-12 sm:min-h-[calc(100svh-9.5rem)] sm:py-16 lg:py-20">
         <div className="max-w-3xl text-white">
           <span className="inline-flex rounded-full bg-white/18 px-4 py-2 text-sm font-black uppercase">
-            Epic Bouncers rentals
+            Epic Bouncers Bounce House Rentals
           </span>
           <h1 className="mt-6 text-5xl font-black leading-none sm:text-6xl lg:text-7xl">Epic Fun for All Ages!</h1>
           <p className="mt-6 max-w-2xl text-xl leading-8 text-white/90">

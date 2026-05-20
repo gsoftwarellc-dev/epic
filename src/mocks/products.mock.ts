@@ -182,7 +182,7 @@ export const productsMock: Product[] = [
     priceCents: 70000,
     depositCents: 20000,
     rentalType: "hourly",
-    images: [img("terminator-mechanical-bull.jpg")],
+    images: [img("terminator-logo-full.jpg")],
     features: ["Experienced operator included", "American-made bull", "Inflatable safety arena", "Western theme", "Great for all events"],
     specs: {
       size: "15'L x 15'W",
