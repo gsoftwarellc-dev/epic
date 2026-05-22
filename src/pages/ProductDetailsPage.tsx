@@ -70,7 +70,7 @@ export function ProductDetailsPage() {
           </h1>
         </div>
 
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] items-start">
           <ProductGallery images={product.images} name={product.name} tone={tone} />
 
           <div className="grid gap-6">

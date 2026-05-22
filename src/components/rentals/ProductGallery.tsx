@@ -16,12 +16,12 @@ export function ProductGallery({ images, name, tone = "epic" }: ProductGalleryPr
     <div className="grid gap-4">
       <div
         className={clsx(
-          "overflow-hidden rounded-[2rem] border shadow-2xl",
-          tone === "terminator" ? "border-red-900 bg-stone-900" : "aspect-[4/3] border-purple-100 bg-purple-100",
+          "overflow-hidden rounded-[1rem] border shadow-2xl",
+          tone === "terminator" ? "border-red-900" : "border-purple-100",
         )}
       >
         {hasImages ? (
-          <img src={activeImage} alt={`${name} gallery image`} className={clsx(tone === "terminator" ? "w-full h-auto" : "h-full w-full object-cover")} />
+          <img src={activeImage} alt={`${name} gallery image`} className="w-full h-auto block" />
         ) : (
           <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-slate-400">
             <ImageOff size={48} />
@@ -37,7 +37,7 @@ export function ProductGallery({ images, name, tone = "epic" }: ProductGalleryPr
               key={image}
               type="button"
               className={clsx(
-                "aspect-[4/3] overflow-hidden rounded-2xl border-4 transition",
+                "aspect-[4/3] overflow-hidden rounded-xl border-4 transition",
                 activeImage === image
                   ? tone === "terminator"
                     ? "border-terminatorRed"
