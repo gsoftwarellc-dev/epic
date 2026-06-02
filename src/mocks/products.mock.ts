@@ -14,7 +14,7 @@ export const productsMock: Product[] = [
     priceCents: 22500,
     depositCents: 7500,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506802_y.jpg")],
+    images: [img("princess-main.jpg"), img("princess-2.jpg"), img("princess-3.jpg")],
     features: ["4-in-1 combo", "Castle design", "Wet or dry use", "Inflatable pool area"],
     specs: {
       size: "15'W x 26'L x 15'H",
@@ -56,7 +56,7 @@ export const productsMock: Product[] = [
     priceCents: 30000,
     depositCents: 10000,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506804_y.jpg")],
+    images: [img("photo_6064184477392506804_y.jpg"), img("dump-truck-2.jpg"), img("dump-truck-3.jpg")],
     features: ["Inside basketball hoop", "Rock climbing wall", "Dual slide", "Inflatable pool area", "3D construction truck design"],
     specs: {
       size: "14'W x 34'L x 15'7\"H",
@@ -77,7 +77,7 @@ export const productsMock: Product[] = [
     priceCents: 22500,
     depositCents: 7500,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506808_y.jpg")],
+    images: [img("space-main.jpg"), img("space-2.jpg")],
     features: ["Inside basketball hoop", "Rock climbing wall", "Dual slide", "Inflatable pool area", "3D astronaut & rocket ship"],
     specs: {
       size: "15'W x 26'L x 13'4\"H",
@@ -98,7 +98,7 @@ export const productsMock: Product[] = [
     priceCents: 32500,
     depositCents: 10000,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506805_y.jpg")],
+    images: [img("photo_6064184477392506805_y.jpg"), img("pirate-1.jpg"), img("pirate-2.jpg")],
     features: ["Dual-lane slide", "Giant 3D octopus topper", "Pirate ship design", "Wet or dry use", "All season"],
     specs: {
       size: "17'W x 33'L x 18'H",
@@ -119,7 +119,7 @@ export const productsMock: Product[] = [
     priceCents: 32500,
     depositCents: 10000,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506806_y.jpg")],
+    images: [img("photo_6064184477392506806_y.jpg"), img("island-1.jpg"), img("island-2.jpg")],
     features: ["Dual slide lanes", "Non-slip stairs", "Wet or dry use", "Great for all ages"],
     specs: {
       size: "17'W x 33'L x 18'H",
@@ -140,7 +140,7 @@ export const productsMock: Product[] = [
     priceCents: 22500,
     depositCents: 7500,
     rentalType: "full_day",
-    images: [img("photo_6064184477392506807_y.jpg")],
+    images: [img("dino-main.jpg")],
     features: ["3D dinosaur entrance", "Erupting volcano design", "Large bounce area", "Dry only"],
     specs: {
       size: "15'L x 15'W x 15'H",
@@ -182,7 +182,7 @@ export const productsMock: Product[] = [
     priceCents: 70000,
     depositCents: 20000,
     rentalType: "hourly",
-    images: [img("terminator-logo-full.jpg")],
+    images: [img("mech-bull-main.jpg"), img("mech-bull-1.jpg"), img("mech-bull-2.jpg"), img("mech-bull-3.jpg")],
     features: ["Experienced operator included", "American-made bull", "Inflatable safety arena", "Western theme", "Great for all events"],
     specs: {
       size: "15'L x 15'W",

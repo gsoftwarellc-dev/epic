@@ -1,5 +1,5 @@
 import { ArrowRight, CalendarCheck } from "lucide-react";
-import heroBackgroundImage from "../../assets/epic-hero-bounce-party.webp";
+import heroBackgroundImage from "../../assets/epic-main-page.jpg";
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 
