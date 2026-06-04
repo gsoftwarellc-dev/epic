@@ -9,19 +9,19 @@ interface TerminatorHeroProps {
 
 export function TerminatorHero({ product }: TerminatorHeroProps) {
   return (
-    <section className="relative isolate overflow-hidden text-white" style={{ backgroundColor: "#5F524B" }}>
+    <section className="relative isolate flex overflow-hidden text-white" style={{ backgroundColor: "#5F524B", height: "80vh" }}>
       <div className="absolute inset-0">
-        <img src="/images/hero_mechanical_version_2.png" alt="" className="h-full w-full object-cover object-right opacity-38" />
+        <img src="/images/mech-bull-3.jpg" alt="" className="h-full w-full object-cover object-right" />
       </div>
       <div
         className="absolute inset-0"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(95,82,75,0.85), rgba(95,82,75,0.6), rgba(95,82,75,0.2)), linear-gradient(0deg, rgba(0,0,0,0.3), transparent)",
+            "linear-gradient(90deg, rgba(95,82,75,0.7), rgba(95,82,75,0.35), rgba(95,82,75,0.05)), linear-gradient(0deg, rgba(0,0,0,0.15), transparent)",
         }}
         aria-hidden="true"
       />
-      <Container className="relative py-20 sm:py-24 lg:py-28">
+      <Container className="relative flex items-center py-20 sm:py-24 lg:py-28">
         <div className="max-w-xl">
           <span className="inline-flex rounded-full border border-red-500 bg-red-950/60 px-4 py-2 text-sm font-black uppercase text-red-100">
             Mechanical bull rental

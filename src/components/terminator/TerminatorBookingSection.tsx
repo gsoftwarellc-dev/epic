@@ -2,7 +2,6 @@ import { useState } from "react";
 import { AvailabilityChecker } from "../rentals/AvailabilityChecker";
 import { BookingForm } from "../rentals/BookingForm";
 import { Container } from "../common/Container";
-import { ProductGallery } from "../rentals/ProductGallery";
 import { RentalFeatureList } from "../rentals/RentalFeatureList";
 import type { AvailabilityResponse } from "../../types/availability";
 import type { Product } from "../../types/product";
@@ -21,7 +20,13 @@ export function TerminatorBookingSection({ product }: TerminatorBookingSectionPr
       <Container>
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="grid gap-6">
-            <ProductGallery images={product.images} name={product.name} tone="terminator" />
+            <div className="flex items-center justify-center">
+              <img
+                src="/images/cow_boy_logo.jpg"
+                alt="The Terminator Mechanical Bull Rental"
+                className="w-72 object-contain"
+              />
+            </div>
             <div className="rounded-[2rem] border border-red-900 bg-stone-900 p-6 shadow-terminator">
               <h2 className="text-2xl font-black">Built for Big-Event Energy</h2>
               <div className="mt-5 grid grid-cols-2 gap-3">

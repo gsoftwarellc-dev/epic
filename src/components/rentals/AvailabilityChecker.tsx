@@ -45,15 +45,13 @@ export function AvailabilityChecker({
       )}
       aria-label="Availability checker"
     >
+
       <div className="flex items-center gap-3">
-        <span
-          className={clsx(
-            "flex h-12 w-12 items-center justify-center rounded-2xl",
-            isTerminator ? "bg-terminatorRed text-white" : "bg-purple-100 text-epicPurple",
-          )}
-        >
-          <CalendarDays aria-hidden="true" />
-        </span>
+        {!isTerminator && (
+          <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-100 text-epicPurple">
+            <CalendarDays aria-hidden="true" />
+          </span>
+        )}
         <div>
           <h2 className="text-2xl font-black">Check Availability</h2>
           <p className={clsx("text-sm", isTerminator ? "text-stone-300" : "text-slate-600")}>
