@@ -17,7 +17,7 @@ export function RentalsPage() {
       <Container>
         <SectionHeading
           eyebrow="Rentals"
-          title="Bounce Houses, Combos, and Slides"
+          title="Bounce Houses, Slides and Combos"
           description="Choose a rental, check the event date, then complete the backend-ready booking form."
         />
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,17 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import { getFeaturedProducts } from "../../api/productsApi";
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 
-const captions = ["Backyard Birthday Setup", "Wet Slide Party Day", "School Event Favorite", "Family Reunion Fun"];
+const galleryItems = [
+  { src: "/images/princess-main.jpg", caption: "Backyard Birthday Setup" },
+  { src: "/images/space-main.jpg", caption: "Wet Slide Party Day" },
+  { src: "/images/pirate-1.jpg", caption: "School Event Favorite" },
+  { src: "/images/dino-main.jpg", caption: "Family Reunion Fun" },
+];
 
 export function GalleryPreviewSection() {
-  const { data: products = [] } = useQuery({
-    queryKey: ["products", "featured"],
-    queryFn: getFeaturedProducts,
-  });
-
   return (
     <section className="bg-white py-16 sm:py-20">
       <Container>
@@ -30,12 +28,12 @@ export function GalleryPreviewSection() {
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {products.slice(0, 4).map((product, index) => (
-              <figure key={product.id} className="overflow-hidden rounded-3xl bg-cream shadow-bounce">
+            {galleryItems.map((item) => (
+              <figure key={item.src} className="overflow-hidden rounded-3xl bg-cream shadow-bounce">
                 <div className="aspect-[4/3]">
-                  <img src={product.images[0]} alt={captions[index]} className="h-full w-full object-cover" />
+                  <img src={item.src} alt={item.caption} className="h-full w-full object-cover" />
                 </div>
-                <figcaption className="p-4 text-sm font-black text-slate-700">{captions[index]}</figcaption>
+                <figcaption className="p-4 text-sm font-black text-slate-700">{item.caption}</figcaption>
               </figure>
             ))}
           </div>
