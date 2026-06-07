@@ -12,6 +12,7 @@ interface AvailabilityCheckerProps {
   onAvailable: (response: AvailabilityResponse) => void;
   onUnavailable?: () => void;
   tone?: "epic" | "terminator";
+  embedded?: boolean;
 }
 
 export function AvailabilityChecker({
@@ -19,6 +20,7 @@ export function AvailabilityChecker({
   onAvailable,
   onUnavailable,
   tone = "epic",
+  embedded = false,
 }: AvailabilityCheckerProps) {
   const [date, setDate] = useState(format(new Date(), "yyyy-MM-dd"));
 
@@ -40,8 +42,9 @@ export function AvailabilityChecker({
   return (
     <section
       className={clsx(
-        "rounded-[2rem] border p-5 shadow-xl sm:p-6",
-        isTerminator ? "border-red-900 bg-stone-950/88 text-white" : "border-purple-100 bg-white text-slate-950",
+        !embedded && "rounded-[2rem] border p-5 shadow-xl sm:p-6",
+        !embedded && (isTerminator ? "border-red-900 bg-stone-950/88" : "border-purple-100 bg-white"),
+        isTerminator ? "text-white" : "text-slate-950",
       )}
       aria-label="Availability checker"
     >

@@ -10,12 +10,12 @@ export function Footer() {
     <footer className={terminatorMode ? "bg-stone-950 text-stone-200" : "bg-slate-950 text-white"}>
       <Container className="grid gap-10 py-12 md:grid-cols-[1.2fr_1fr_1fr]">
         <div>
-          <Link to="/" className="inline-block rounded-2xl bg-white p-3">
+          <Link to="/" className="inline-block rounded-2xl bg-white px-4 py-2">
             {terminatorMode ? (
               <img
-                src="/images/terminator_logo-removebg-preview.png"
+                src="/images/terminator_logo_for_footer.png"
                 alt="The Terminator Mechanical Bull Rental"
-                className="h-28 w-auto object-contain"
+                className="h-36 w-auto object-contain"
               />
             ) : (
               <img
