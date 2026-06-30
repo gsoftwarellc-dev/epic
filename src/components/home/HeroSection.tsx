@@ -31,7 +31,7 @@ export function HeroSection() {
             </Button>
             <a
               href={PHONE_TEL}
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/15 px-7 text-lg font-extrabold text-white transition hover:bg-white/25 min-h-14"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-epicPink via-epicOrange to-epicBlue bg-[length:200%_auto] px-7 text-lg font-extrabold text-white shadow-lg transition hover:scale-105 hover:bg-right min-h-14"
             >
               <Phone aria-hidden="true" />
               Call Now
