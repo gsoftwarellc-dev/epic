@@ -40,7 +40,7 @@ export function MechBullSection() {
               <span className="rounded-full border border-stone-600 bg-stone-800 px-4 py-2 text-stone-300">All Ages</span>
             </div>
             <div className="mt-8">
-              <Button to="/terminator" variant="secondary" size="lg" icon={<ArrowRight aria-hidden="true" />}>
+              <Button to="/terminator-mechanical-bull" variant="secondary" size="lg" icon={<ArrowRight aria-hidden="true" />}>
                 View &amp; Book
               </Button>
             </div>

@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { CallNowButton } from "../common/CallNowButton";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 
@@ -10,6 +11,7 @@ export function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <CallNowButton />
     </div>
   );
 }

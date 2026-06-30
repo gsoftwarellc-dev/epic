@@ -1,9 +1,10 @@
 import { clsx } from "clsx";
 import { format } from "date-fns";
-import { AlertCircle, CalendarDays, CheckCircle2 } from "lucide-react";
+import { AlertCircle, CalendarDays, CheckCircle2, Phone } from "lucide-react";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
 import { checkAvailability } from "../../api/availabilityApi";
+import { PHONE_DISPLAY, PHONE_TEL } from "../../config/contact";
 import type { AvailabilityResponse } from "../../types/availability";
 import { Button } from "../common/Button";
 
@@ -122,6 +123,29 @@ export function AvailabilityChecker({
               ) : null}
             </div>
           </div>
+
+          {response.available ? (
+            <div
+              className={clsx(
+                "mt-4 flex flex-col items-start gap-3 border-t pt-4 sm:flex-row sm:items-center sm:justify-between",
+                isTerminator ? "border-red-800" : "border-green-200",
+              )}
+            >
+              <p className="text-sm font-bold">Prefer to book by phone? Call now to lock in your date.</p>
+              <a
+                href={PHONE_TEL}
+                className={clsx(
+                  "inline-flex shrink-0 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-extrabold transition",
+                  isTerminator
+                    ? "bg-terminatorRed text-white shadow-terminator hover:bg-red-800"
+                    : "bg-epicPurple text-white shadow-bounce hover:bg-purple-700",
+                )}
+              >
+                <Phone size={18} aria-hidden="true" />
+                Call {PHONE_DISPLAY}
+              </a>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </section>

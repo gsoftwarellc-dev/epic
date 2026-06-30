@@ -19,6 +19,9 @@ module.exports = {
         warm: "0 18px 45px rgba(249, 115, 22, 0.2)",
         terminator: "0 18px 50px rgba(0, 0, 0, 0.35)",
       },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+      },
     },
   },
   plugins: [],

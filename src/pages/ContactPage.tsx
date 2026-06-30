@@ -1,26 +1,21 @@
-import { Globe, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { Container } from "../components/common/Container";
-import { Button } from "../components/common/Button";
 import { SectionHeading } from "../components/common/SectionHeading";
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "../config/contact";
 
 const contactCards = [
-  { title: "Phone", value: "801.941.0482", icon: Phone },
-  { title: "Email", value: "info@epicbouncersutah.com", icon: Mail },
-  { title: "Website", value: "EpicBouncersUtah.com", icon: Globe },
-  { title: "Service area", value: "Davis, Weber, Box Elder counties (Other locations available with travel fee)", icon: MapPin },
+  { title: "Phone", value: PHONE_DISPLAY, icon: Phone, href: PHONE_TEL },
+  { title: "Email", value: EMAIL, icon: Mail, href: `mailto:${EMAIL}` },
+  { title: "Service area", value: "Davis, Weber, Box Elder counties", icon: MapPin },
 ];
 
 export function ContactPage() {
   return (
     <section className="bg-white py-14 sm:py-20">
       <Container>
-        <SectionHeading
-          eyebrow="Contact"
-          title="Tell Us About Your Event"
-          description="Share the date, rental ideas, and event location so the right setup can be planned."
-        />
+        <SectionHeading eyebrow="Contact" title="Tell Us About Your Event" />
 
-        <div className="mt-10 grid gap-5 md:grid-cols-4">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {contactCards.map((card) => {
             const Icon = card.icon;
 
@@ -30,40 +25,29 @@ export function ContactPage() {
                   <Icon aria-hidden="true" />
                 </span>
                 <h2 className="mt-4 font-black text-slate-950">{card.title}</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{card.value}</p>
+                {card.href ? (
+                  <a href={card.href} className="mt-2 block text-sm leading-6 text-slate-600 hover:text-epicPurple">
+                    {card.value}
+                  </a>
+                ) : (
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{card.value}</p>
+                )}
               </article>
             );
           })}
         </div>
 
-        <form
-          className="mx-auto mt-10 grid max-w-3xl gap-5 rounded-[2rem] bg-cream p-6 shadow-bounce sm:p-8"
-          onSubmit={(event) => event.preventDefault()}
-        >
-          <div className="grid gap-5 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-bold text-slate-700">
-              Name
-              <input className="min-h-12 rounded-2xl border border-purple-100 px-4 outline-none focus:ring-4 focus:ring-purple-100" />
-            </label>
-            <label className="grid gap-2 text-sm font-bold text-slate-700">
-              Email
-              <input
-                type="email"
-                className="min-h-12 rounded-2xl border border-purple-100 px-4 outline-none focus:ring-4 focus:ring-purple-100"
-              />
-            </label>
-          </div>
-          <label className="grid gap-2 text-sm font-bold text-slate-700">
-            Event details
-            <textarea
-              rows={5}
-              className="rounded-2xl border border-purple-100 px-4 py-3 outline-none focus:ring-4 focus:ring-purple-100"
-            />
-          </label>
-          <Button type="submit" variant="secondary">
-            Send Message
-          </Button>
-        </form>
+        <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-[2rem] shadow-bounce">
+          <iframe
+            title="Service area map"
+            src="https://www.google.com/maps?q=Davis+County,+Weber+County,+Box+Elder+County,+Utah&output=embed"
+            width="100%"
+            height="450"
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
       </Container>
     </section>
   );

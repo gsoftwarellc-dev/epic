@@ -3,6 +3,7 @@ import { AvailabilityChecker } from "../rentals/AvailabilityChecker";
 import { BookingForm } from "../rentals/BookingForm";
 import { Container } from "../common/Container";
 import { RentalFeatureList } from "../rentals/RentalFeatureList";
+import { BOOKING_FORM_ENABLED } from "../../config/features";
 import type { AvailabilityResponse } from "../../types/availability";
 import type { Product } from "../../types/product";
 
@@ -50,7 +51,7 @@ export function TerminatorBookingSection({ product }: TerminatorBookingSectionPr
                 />
               </div>
             </div>
-            {availableDate?.available ? (
+            {BOOKING_FORM_ENABLED && availableDate?.available ? (
               <BookingForm
                 key={`${product.id}-${availableDate.date}`}
                 product={product}

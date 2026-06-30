@@ -1,8 +1,8 @@
 import { clsx } from "clsx";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { Button } from "../common/Button";
+import { PHONE_DISPLAY } from "../../config/contact";
 import { Container } from "../common/Container";
 
 const navItems = [
@@ -62,10 +62,26 @@ export function Header() {
           </NavLink>
         </nav>
 
-        <div className="hidden lg:block">
-          <Button to="/rentals" variant={terminatorMode ? "terminator" : "secondary"} size="sm">
-            Book Now
-          </Button>
+        <div
+          className={clsx(
+            "hidden items-center gap-3 rounded-full px-4 py-2 lg:flex",
+            terminatorMode ? "bg-red-50" : "bg-purple-50",
+          )}
+        >
+          <span
+            className={clsx(
+              "flex h-9 w-9 items-center justify-center rounded-full text-white",
+              terminatorMode ? "bg-terminatorRed" : "bg-epicPurple",
+            )}
+          >
+            <Phone size={16} aria-hidden="true" />
+          </span>
+          <span className="leading-tight">
+            <span className={clsx("block text-[11px] font-bold uppercase tracking-wide", terminatorMode ? "text-red-700" : "text-epicPurple")}>
+              Call us
+            </span>
+            <span className="block select-all text-base font-black text-slate-950">{PHONE_DISPLAY}</span>
+          </span>
         </div>
 
         <button

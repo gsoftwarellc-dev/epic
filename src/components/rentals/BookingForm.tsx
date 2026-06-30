@@ -1,17 +1,16 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { clsx } from "clsx";
-import { CreditCard, Loader2 } from "lucide-react";
+import { CalendarCheck, Loader2, Phone } from "lucide-react";
 import type { ReactNode } from "react";
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { z } from "zod";
-import { createBooking, createCheckoutSession } from "../../api/bookingsApi";
+import { createBooking } from "../../api/bookingsApi";
+import { PHONE_DISPLAY, PHONE_TEL } from "../../config/contact";
 import type { AvailabilityResponse } from "../../types/availability";
 import type { CreateBookingPayload } from "../../types/booking";
 import type { Product } from "../../types/product";
-import { formatCurrency } from "../../utils/formatCurrency";
 import { Button } from "../common/Button";
 
 interface BookingFormProps {
@@ -37,7 +36,6 @@ const bookingSchema = z.object({
 type BookingFormValues = z.infer<typeof bookingSchema>;
 
 export function BookingForm({ product, availability, tone = "epic" }: BookingFormProps) {
-  const navigate = useNavigate();
   const isTerminator = tone === "terminator";
   const defaultSlot = availability.availableSlots?.[0]
     ? `${availability.availableSlots[0].startTime}|${availability.availableSlots[0].endTime}`
@@ -56,7 +54,7 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
     },
   });
 
-  const checkoutMutation = useMutation({
+  const bookingMutation = useMutation({
     mutationFn: async (values: BookingFormValues) => {
       const [startTime, endTime] = values.slot ? values.slot.split("|") : [];
       const payload: CreateBookingPayload = {
@@ -79,16 +77,7 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
         notes: values.notes,
       };
 
-      const booking = await createBooking(payload);
-      return createCheckoutSession(booking.id);
-    },
-    onSuccess: (session) => {
-      if (session.checkoutUrl.startsWith("http")) {
-        window.location.assign(session.checkoutUrl);
-        return;
-      }
-
-      navigate(session.checkoutUrl);
+      return createBooking(payload);
     },
   });
 
@@ -113,7 +102,7 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
         <div>
           <h2 className="text-2xl font-black">Reserve {product.name}</h2>
           <p className={clsx("mt-1 text-sm", isTerminator ? "text-stone-300" : "text-slate-600")}>
-            Total rental {formatCurrency(product.priceCents)}. Deposit due today {formatCurrency(product.depositCents)}.
+            Submit your details and we&apos;ll call you to confirm scheduling.
           </p>
         </div>
         <span
@@ -126,7 +115,32 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
         </span>
       </div>
 
-      <form className="mt-6 grid gap-5" onSubmit={handleSubmit((values) => checkoutMutation.mutate(values))}>
+      {bookingMutation.isSuccess ? (
+        <div
+          className={clsx(
+            "mt-6 grid gap-4 rounded-2xl p-6 text-center",
+            isTerminator ? "bg-stone-900 text-white" : "bg-green-50 text-slate-950",
+          )}
+        >
+          <CalendarCheck className={clsx("mx-auto", isTerminator ? "text-red-400" : "text-green-700")} size={36} aria-hidden="true" />
+          <p className="font-bold">
+            Request received! Call us now to confirm your scheduling details.
+          </p>
+          <a
+            href={PHONE_TEL}
+            className={clsx(
+              "mx-auto inline-flex items-center justify-center gap-2 rounded-full px-7 text-lg font-extrabold transition min-h-14",
+              isTerminator
+                ? "bg-terminatorRed text-white shadow-terminator hover:bg-red-800"
+                : "bg-epicPurple text-white shadow-bounce hover:bg-purple-700",
+            )}
+          >
+            <Phone aria-hidden="true" />
+            Call {PHONE_DISPLAY}
+          </a>
+        </div>
+      ) : (
+      <form className="mt-6 grid gap-5" onSubmit={handleSubmit((values) => bookingMutation.mutate(values))}>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field label="First name" error={errors.firstName?.message} isTerminator={isTerminator}>
             <input {...register("firstName")} className={inputClasses(isTerminator)} autoComplete="given-name" />
@@ -175,9 +189,9 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
           <textarea {...register("notes")} rows={4} className={clsx(inputClasses(isTerminator), "resize-y py-3")} />
         </Field>
 
-        {checkoutMutation.isError ? (
+        {bookingMutation.isError ? (
           <p className="rounded-2xl bg-red-50 p-4 text-sm font-bold text-red-700">
-            Something went wrong creating the booking. Please try again.
+            Something went wrong submitting the booking. Please try again.
           </p>
         ) : null}
 
@@ -185,12 +199,13 @@ export function BookingForm({ product, availability, tone = "epic" }: BookingFor
           type="submit"
           variant={isTerminator ? "terminator" : "primary"}
           size="lg"
-          disabled={checkoutMutation.isPending}
-          icon={checkoutMutation.isPending ? <Loader2 className="animate-spin" aria-hidden="true" /> : <CreditCard aria-hidden="true" />}
+          disabled={bookingMutation.isPending}
+          icon={bookingMutation.isPending ? <Loader2 className="animate-spin" aria-hidden="true" /> : <CalendarCheck aria-hidden="true" />}
         >
-          {checkoutMutation.isPending ? "Preparing Checkout..." : "Continue to Checkout"}
+          {bookingMutation.isPending ? "Submitting Request..." : "Request Booking"}
         </Button>
       </form>
+      )}
     </section>
   );
 }

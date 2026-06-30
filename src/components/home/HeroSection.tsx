@@ -1,5 +1,6 @@
-import { ArrowRight, CalendarCheck } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import heroBackgroundImage from "../../assets/epic-main-page.jpg";
+import { PHONE_TEL } from "../../config/contact";
 import { Button } from "../common/Button";
 import { Container } from "../common/Container";
 
@@ -28,9 +29,13 @@ export function HeroSection() {
             <Button to="/rentals" variant="secondary" size="lg" icon={<ArrowRight aria-hidden="true" />}>
               View Rentals
             </Button>
-            <Button to="/rentals" variant="ghost" size="lg" icon={<CalendarCheck aria-hidden="true" />}>
-              Check Availability
-            </Button>
+            <a
+              href={PHONE_TEL}
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white/15 px-7 text-lg font-extrabold text-white transition hover:bg-white/25 min-h-14"
+            >
+              <Phone aria-hidden="true" />
+              Call Now
+            </a>
           </div>
         </div>
       </Container>

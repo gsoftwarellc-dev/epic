@@ -8,6 +8,7 @@ import { AvailabilityChecker } from "../components/rentals/AvailabilityChecker";
 import { BookingForm } from "../components/rentals/BookingForm";
 import { ProductGallery } from "../components/rentals/ProductGallery";
 import { RentalFeatureList } from "../components/rentals/RentalFeatureList";
+import { BOOKING_FORM_ENABLED } from "../config/features";
 import type { AvailabilityResponse } from "../types/availability";
 import { formatCurrency } from "../utils/formatCurrency";
 
@@ -102,7 +103,7 @@ export function ProductDetailsPage() {
               onUnavailable={() => setAvailableDate(null)}
             />
 
-            {availableForThisProduct ? (
+            {BOOKING_FORM_ENABLED && availableForThisProduct ? (
               <BookingForm
                 key={`${product.id}-${availableForThisProduct.date}`}
                 product={product}

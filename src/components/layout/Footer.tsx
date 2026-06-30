@@ -1,5 +1,6 @@
 import { CalendarCheck, Mail, MapPin, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { EMAIL, PHONE_DISPLAY, PHONE_TEL } from "../../config/contact";
 import { Container } from "../common/Container";
 
 export function Footer() {
@@ -52,12 +53,12 @@ export function Footer() {
         <div>
           <h2 className="text-base font-black">Contact</h2>
           <div className="mt-4 grid gap-3 text-sm text-slate-300">
-            <span className="flex items-center gap-3">
-              <Phone size={18} aria-hidden="true" /> 801.941.0482
-            </span>
-            <span className="flex items-center gap-3">
-              <Mail size={18} aria-hidden="true" /> info@epicbouncersutah.com
-            </span>
+            <a href={PHONE_TEL} className="flex items-center gap-3 hover:text-white">
+              <Phone size={18} aria-hidden="true" /> {PHONE_DISPLAY}
+            </a>
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 hover:text-white">
+              <Mail size={18} aria-hidden="true" /> {EMAIL}
+            </a>
             <span className="flex items-center gap-3">
               <MapPin size={18} aria-hidden="true" /> Davis, Weber, Box Elder counties
             </span>
